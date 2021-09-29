@@ -4,6 +4,17 @@ Docker compose file to setup local ES and Kafka environment.
 ## Requirements
 
 - Docker host with at least 6 GB of memory
+- `docker-compose`
+
+## Installation
+
+To install and run ES and Kafka:
+
+```
+docker-compose up
+```
+
+NB: if the containers exit with code 137, this means they are OOM. Add more memory
 
 ## cloudmc.properties
 
