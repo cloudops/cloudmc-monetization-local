@@ -41,6 +41,6 @@ services:
           connections:
             docker-kafka-server:
               properties:
-                bootstrap.servers: "cloudmc-monetization-local_kafka_1:9092"
+                bootstrap.servers: "cloudmc-monetization-local-kafka-1:9092"
     ports:
       - 3000:8080
