@@ -30,6 +30,9 @@ cloudmc.elasticsearch.rest.read-timeout=30000
 
 # Usage records pushed to kafka topic
 cloudmc.kafka.bootstrap.server=localhost:29092
+cloudmc.kafka.security.protocol=PLAINTEXT
+cloudmc.kafka.topic.replicas=1
+
 ```
 
 ## Manually sending data to a topic
