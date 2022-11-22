@@ -53,7 +53,7 @@ To exit, press `Ctrl+C`
 More info [here](https://docs.confluent.io/platform/current/app-development/kafkacat-usage.html#consumer-mode)
 
 ## Connection problem in AKHQ
-Depending on you docker version, you may be experiencing some connectivity issue in AKHQ to Kafka.
+Depending on your version of docker, you may be experiencing some connectivity issues in AKHQ to Kafka.
 Please verify first that both Zookeeper and Kafka containers are up. If it is so, you need to do an update to the docker-compose.yaml file. 
 
 You must update the file from : 
