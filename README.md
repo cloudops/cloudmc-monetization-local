@@ -11,7 +11,7 @@ Docker compose file to setup local ES and Kafka environment.
 To install and run ES and Kafka:
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 NB: if the containers exit with code 137, this means they are OOM. Add more memory
@@ -54,3 +54,38 @@ To manually read data from a topic, run this command:
 To exit, press `Ctrl+C`
 
 More info [here](https://docs.confluent.io/platform/current/app-development/kafkacat-usage.html#consumer-mode)
+
+## Connection problem in AKHQ
+Depending on your version of docker, you may be experiencing some connectivity issues in AKHQ to Kafka.
+Please verify first that both Zookeeper and Kafka containers are up. If it is so, you need to do an update to the docker-compose.yaml file. 
+
+You must update the file from : 
+```
+  akhq:
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "cloudmc-monetization-local-kafka-1:9092"
+```
+to :
+```
+  akhq:
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "cloudmc-monetization-local_kafka_1:9092"
+```
+
+Then run again the docker-compose command.
+```
+docker-compose up -d
+```
+
+
+It seems the docker container name generation changed in the most recent version of docker. They now use hyphens instead of underscores.
