@@ -85,4 +85,4 @@ docker-compose up -d
 ```
 
 
-It seems the docker container name generation changed in the most recent version of docker. They use now hyphens instead of underscores.
+It seems the docker container name generation changed in the most recent version of docker. They now use hyphens instead of underscores.
