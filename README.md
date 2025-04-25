@@ -16,6 +16,9 @@ docker-compose up -d
 
 NB: if the containers exit with code 137, this means they are OOM. Add more memory
 
+## Kibana
+If you would like to also have kibana locally (allowing you to visually explore your records, index management, etc), you can uncomment the commented-out sections of the docker-compose.yaml and access the app at `localhost:5601/app`.
+
 ## cloudmc.properties
 
 To connect to these dependencies, update your local cloudmc.properties to set:
