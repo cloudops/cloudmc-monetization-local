@@ -26,7 +26,7 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.18.3
     ports:
       - 9200:9200
       - 9300:9300
@@ -54,7 +54,7 @@ services:
       - esdata:/usr/share/elasticsearch/data
 
   # kibana:
-  #   image: docker.elastic.co/kibana/kibana:8.14.3
+  #   image: docker.elastic.co/kibana/kibana:8.18.3
   #   depends_on:
   #     elasticsearch:
   #       condition: service_healthy
